@@ -6,9 +6,9 @@ import {add, minus, asyncAdd} from '../../actions/counter'
 
 import './index.styl'
 
-
-@connect(({counter}) => ({
-  counter
+// 这里的counter2，是src/reducers/counter.js
+@connect(({counter2}) => ({
+  counter2
 }), (dispatch) => ({
   add() {
     dispatch(add())
@@ -47,7 +47,7 @@ class Index extends Component {
         <Button className='add_btn' onClick={this.props.add}>+</Button>
         <Button className='dec_btn' onClick={this.props.dec}>-</Button>
         <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
+        <View><Text>{this.props.counter2.num}</Text></View>
         <View><Text>Hello, World999</Text></View>
       </View>
     )
